@@ -14,11 +14,15 @@ class Login extends React.Component {
     }
 
     render() {
+        let welcomeMessage;
+        if (this.state.isLoggedIn) {
+            welcomeMessage = <div>{'Welcome ' + this.props.name}</div>;
+        }
         return (
-            <div>
+            <React.Fragment>
                 <button onClick={this.onClick}>{this.state.isLoggedIn ? 'Logout' : 'Login'}</button>
-                <div>{this.state.isLoggedIn ? 'Welcome ' + this.props.name : 'Please Login'}</div>
-            </div>
+                {welcomeMessage}
+            </React.Fragment>
         );
     }
 
