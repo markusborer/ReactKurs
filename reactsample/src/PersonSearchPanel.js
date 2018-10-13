@@ -2,6 +2,7 @@ import React from 'react';
 import PersonSearchForm from './PersonSearchForm';
 import PersonSearchResult from './PersonSearchResult';
 import axios from 'axios';
+import ErrorBoundary from './ErrorBoundary';
 
 class PersonSearchPanel extends React.Component {
 
@@ -21,10 +22,12 @@ class PersonSearchPanel extends React.Component {
   
     render() {
         return (
-            <div>
-                <PersonSearchForm onChange={this.onChange} />
-                <PersonSearchResult persons={this.state.persons} />
-            </div>
+            <ErrorBoundary>
+                <div>
+                    <PersonSearchForm onChange={this.onChange} />
+                    <PersonSearchResult persons={this.state.persons} />
+                </div>
+            </ErrorBoundary>
         );
     }
 
