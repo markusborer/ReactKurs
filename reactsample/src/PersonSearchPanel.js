@@ -24,6 +24,7 @@ class PersonSearchPanel extends React.Component {
         return (
             <ErrorBoundary>
                 <div>
+                    <h2>Personensuche</h2>
                     <PersonSearchForm onChange={this.onChange} />
                     <PersonSearchResult persons={this.state.persons} />
                 </div>
