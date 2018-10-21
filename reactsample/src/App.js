@@ -4,6 +4,7 @@ import './App.css';
 import Timer from './Timer';
 import Login from './Login';
 import PersonSearchPanel from './PersonSearchPanel';
+import { Row, Col } from 'react-materialize';
 
 class App extends Component {
 
@@ -27,14 +28,27 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
+          <Row>
+            <Col s={4} m={4} className="left-align">
+              <Login isLoggedIn={this.state.isLoggedIn} onChange={this.onLoginChange}></Login>
+            </Col>
+            <Col s={4} m={4}>
+              <img src={logo} className="App-logo" alt="logo" />
+              {welcomeMessage}
+            </Col>
+            <Col s={4} m={4}>
+            </Col>
+          </Row>
         </header>
         <main>
-          <Timer></Timer>
-          <Login isLoggedIn={this.state.isLoggedIn} onChange={this.onLoginChange}></Login>
-          {welcomeMessage}
           {personSearchPanel}
         </main>
+        <footer className="black white-text">
+          <Row>
+            <Col s={6} m={6} className="left-align">&copy; Copyright Markus Borer</Col>
+            <Col s={6} m={6} className="right-align"><Timer /></Col>
+          </Row>
+        </footer>
       </div>
     );
   }
