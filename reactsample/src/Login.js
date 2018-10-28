@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'react-materialize';
+import { Button, Icon } from 'react-materialize';
 
 class Login extends React.Component {
 
@@ -15,7 +15,7 @@ class Login extends React.Component {
     
     render() {
         return (
-            <Button onClick={this.onClick}>{this.props.isLoggedIn ? 'Logout' : 'Login'}</Button>
+            <Button onClick={this.onClick}>{this.props.isLoggedIn ? 'Logout' : 'Login'}<Icon left>{this.props.isLoggedIn ? 'power_settings_new' : 'exit_to_app'}</Icon></Button>
         );
     }
 

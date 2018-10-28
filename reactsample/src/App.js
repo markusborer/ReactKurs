@@ -26,7 +26,7 @@ class App extends Component {
         personSearchPanel = <PersonSearchPanel />
     }
     return (
-      <div className="App">
+      <div className="App container">
         <header className="App-header">
           <Row>
             <Col s={4} m={4} className="left-align">
@@ -40,7 +40,7 @@ class App extends Component {
             </Col>
           </Row>
         </header>
-        <main>
+        <main className="grey lighten-3">
           {personSearchPanel}
         </main>
         <footer className="black white-text">

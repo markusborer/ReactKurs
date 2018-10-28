@@ -18,7 +18,7 @@ class ErrorBoundary extends React.Component {
         if (this.state.errorInfo) {
             return (
                 <div>
-                    <p><b>Es ist ein Fehler aufgetreten. Sie müssen die Seite neu laden (F5).</b></p>
+                    <p className="red-text"><b>Es ist ein Fehler aufgetreten. Sie müssen die Seite neu laden (F5).</b></p>
                     <p></p>
                     <p>
                         {this.state.error && this.state.error.toString()}
